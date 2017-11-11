@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Unsubscriber</string>
+    <string name="unsubscribe_from_format_prompt">Are you trying to unsubscribe from %s?</string>
+
+    <string name="yes">Yes</string>
+    <string name="never">Never</string>
+    <string name="do_every_time_format">Do this every time for %s</string>
 </resources>

@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.exsilicium.unsubscriber">
+<manifest package="com.exsilicium.unsubscriber"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WebViewActivity"
+        <activity
+            android:name=".WebViewActivity"
+            android:noHistory="true"
+            android:theme="@style/Base.Theme.AppCompat.Dialog.Alert"
             >
             <intent-filter tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
                 <data
-                    android:scheme="http"
-                    android:host="*"
-                    android:pathPattern=".*unsubscribe.*"
-                    />
-                <data
-                    android:scheme="https"
-                    android:host="*"
-                    android:pathPattern=".*unsubscribe.*"
-                    />
-                <data
-                    android:scheme="http"
                     android:host="*"
                     android:pathPattern=".*optout.*"
+                    android:scheme="http"
                     />
                 <data
-                    android:scheme="https"
                     android:host="*"
                     android:pathPattern=".*optout.*"
+                    android:scheme="https"
+                    />
+                <data
+                    android:host="*"
+                    android:pathPattern=".*unsub.*"
+                    android:scheme="http"
+                    />
+                <data
+                    android:host="*"
+                    android:pathPattern=".*unsub.*"
+                    android:scheme="https"
                     />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
